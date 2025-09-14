@@ -1,0 +1,132 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 15px;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.container {
+  flex: 1;
+  margin: 20px auto;
+  padding: 20px;
+  width: 95%;
+  max-width: 1000px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+/* Inputs and buttons */
+input, select, button {
+  width: 100%;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  display: block;
+  font-size: 1rem;
+}
+
+button.btn {
+  background: #00c6ff;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+button.btn:hover {
+  background: #0072ff;
+  transform: scale(1.05);
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 15px;
+  transition: transform 0.3s, background 0.3s;
+  text-align: center;
+}
+
+.card h4 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  word-break: break-word;
+}
+
+.card button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #6a11cb;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.card button:hover {
+  background: #2575fc;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.03);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Animations */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+.fade-in { animation: fade-in 0.8s ease-in-out; }
+.slide-in { animation: slide-in 0.8s ease-in-out; }
+
+/* Mobile optimization */
+@media (max-width: 600px) {
+  .header {
+    font-size: 1.2rem;
+  }
+  .container {
+    padding: 15px;
+  }
+  .grid {
+    grid-template-columns: 1fr; /* single column on mobile */
+  }
+  .card {
+    padding: 12px;
+  }
+}
